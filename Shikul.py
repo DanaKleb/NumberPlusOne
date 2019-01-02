@@ -1,22 +1,34 @@
-s = "anagram"
-t = "nagaram"
-result = 0
-for i in s:
-    for j in t:
-        if i==j:
-            result += 1
-            t = t.replace("i","")
-            break
-if result == len(s) and result == len(t):
-    print ("true")
-else:
-    print ("false")
+#comparing string, "compare_to" will be the base
+compare_to = "eolr"
+word = "rore"
+new_list = [i for i in compare_to if any (j in word for j in i if i in j)]
+result = 'true' if len(word) == len(compare_to) and (len(new_list) >= len(word) and len(new_list) >= len(compare_to)) else 'false'
+print(new_list)
+print(result)
 
-s ="anagram"
-t = "nagaram"
-outcome = [(i,j) for i in s for j in t if i==j and len(s) == len (t)]
-print(outcome)
+#Greek numbers
+ints = [1,5,10,50,100,1000]
+nums = ['I','V','X','L','C','M']
+def Greek_numbers(str):
+    val = 0
+    # for x in str:
+    #     if x == 'I':
+    #         val += 1
+    #         continue
+    #     elif x == 'V':
+    #         val += 5
+    #         continue
+    #     elif x == 'X':
+    #         val += 10
+    #     elif x == 'L':
+    #         val += 50
+    #     elif x == 'C':
+    #         val += 100
+    #     elif x == 'M':
+    #         val += 1000
+    return val
 
+print (Greek_numbers('LXVI'))
 
 # number + 1
 def numberPlusOne(lst):
@@ -27,4 +39,6 @@ def numberPlusOne(lst):
     return (num)
 
 print (numberPlusOne([5,9,3,9,9]))
+
+
 
